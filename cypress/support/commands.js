@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+Cypress.Commands.add('login', (username, password) => {
+    // cy.session([username, password], () => {
+      cy.visit('https://alterra:466RGXuqBhnESDvV@account.uat.ikonpass.com/login')
+      cy.get('#email').type(username)
+      cy.get('#password').type(password)
+      cy.get("[data-test='button']").click()
+      // cy.wait(3000)
+      cy.url().should('contain', '/en/myaccount')
+    // })
+  })
