@@ -11,6 +11,10 @@ class Lodge {
         cy.visit('https://develop-mammoth-alterra.vercel.app/lodging/mammoth-mountain-inn?ArrivalDate=2023-04-10&DepartureDate=2023-04-14&Adult=2&Child=0')
     }
 
+    MammActivityResults() {
+        cy.visit('https://develop-mammoth-alterra.vercel.app/test/mammothproducts#startDate=03-20-2023')
+    }
+
     //mvc comparison site, using Stratton
     mvcLodgeListingEmpty() {
         cy.visit('https://stratton-sc10-dev.alterramtnco.dev/plan-your-trip/lodging')
@@ -20,7 +24,6 @@ class Lodge {
     mvcMultiUnitMmiDated() {
         cy.visit('https://stratton-sc10-dev.alterramtnco.dev/plan-your-trip/lodging/mammoth-mountain-inn?arrivaldate=04/10/2023&departuredate=04/14/2023&Adult=2&Child=0')
     }
-
 
     //
 

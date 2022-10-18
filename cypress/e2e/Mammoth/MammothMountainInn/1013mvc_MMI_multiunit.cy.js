@@ -97,6 +97,7 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
         })           
 
         // Verify  cart 
+        cy.wait(500)
         cart.Items().should('include.text', 'Mammoth Mountain Inn')
             .and('include.text', 'Apr 10-14, 2023')
             .and('include.text', '2 Adults, 0 Children')
