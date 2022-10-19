@@ -28,6 +28,15 @@ beforeEach(() => {
 
     // close alerts
     cy.get('.fa-xmark.css-zm3qx2').click({ multiple: true })    
+
+    // if Alert (cookie consent) is opened, then close it
+    cy.get('body').then(($ele) => {
+        if ($ele.find('.cc-window').length > 0) {
+            cy.get('.cc-dismiss').click()
+        // } else {
+        //     //Do Something
+        }
+    })     
         
 })
 

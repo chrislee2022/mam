@@ -28,7 +28,7 @@ beforeEach(() => {
     cy.get('body').then(($ele) => {
         if ($ele.find('.alerts.unread-others.opened').length > 0) {
             cy.get('.alerts-toggle').click()
-        // } else {
+        // } else {   
         //     //Do Something
         }
     })   
