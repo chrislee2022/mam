@@ -23,14 +23,13 @@ beforeEach(() => {
     //     cy.wait(1000)
     cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
 
-    //text (hardcoded)
-    cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
+    // //text (hardcoded)
+    // cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
 
     // close alerts
     cy.get('.fa-xmark.css-zm3qx2').click({ multiple: true })    
 
-
-    // if Alert is opened, then close it
+    // if Alert (cookie consent) is opened, then close it
     cy.get('body').then(($ele) => {
         if ($ele.find('.cc-window').length > 0) {
             cy.get('.cc-dismiss').click()
@@ -48,7 +47,7 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
     it('C29732 Book Lodge Only', () => {
 
         // click on the first lodge only 
-        cy.get('.css-we5dge').eq(0).click()
+        cy.get('.css-pg2o0o').eq(0).click()
 
         // mini cart count should be 1 
         cy.get('.css-raibn').should('include.text', '1')
@@ -56,8 +55,8 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
         // click on the basket
         cy.get('[alt="Basket"]').click()
     
-        // spinner (maybe) on the cart page 
-        cy.get('.css-1enmcrj', {timeout: 60000}).should('be.visible')
+        // // spinner (maybe) on the cart page 
+        // cy.get('.css-1enmcrj', {timeout: 60000}).should('be.visible')
 
         // on mvc, this was named 'title'.  this is the name of the lodge 
         cy.get('.css-crpffl').should('include.text', 'Mammoth Mountain Inn')
@@ -94,7 +93,7 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
             
 
         // click on 'check out' button to inntopia oob
-        cy.get('.css-19eq64j').click()
+        cy.get('.css-10uqidd').click()
         cy.url().should('eq', 'https://reservations.tremblant.ca/ecomm/Checkout/Customer/17793040')
 
         // verify the price om the inntopia page is the same as the estimated total from the cart page
@@ -108,7 +107,7 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
         cy.get('.css-1rq4esi').eq(0).click()
 
         // click on the first book this package  
-        cy.get('.css-we5dge').eq(2).click()
+        cy.get('.css-pg2o0o').eq(2).click()
 
         // mini cart count should be 1 
         cy.get('.css-raibn').should('include.text', '1')
@@ -116,8 +115,8 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
         // click on the basket
         cy.get('[alt="Basket"]').click()
     
-        // spinner (maybe) on the cart page 
-        cy.get('.css-1enmcrj', {timeout: 60000}).should('be.visible')
+        // // spinner (maybe) on the cart page 
+        // cy.get('.css-1enmcrj', {timeout: 60000}).should('be.visible')
 
         // on mvc, this was named 'title'.  this is the name of the lodge 
         cy.get('.css-crpffl').should('include.text', 'Mammoth Mountain Inn')
@@ -159,7 +158,7 @@ describe('Multi Unit (with bundle) Lodge Only to mini cart, should be displayed 
         .and('include.text', '$242.93')                
             
         // click on 'check out' button to inntopia oob
-        cy.get('.css-19eq64j').click()
+        cy.get('.css-10uqidd').click()
         cy.url().should('eq', 'https://reservations.tremblant.ca/ecomm/Checkout/Customer/17793040')
 
         // verify the price om the inntopia page is the same as the estimated total from the cart page

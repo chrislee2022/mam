@@ -47,7 +47,7 @@ describe('bundles on the activity results page', () => {
     // it('cancel on bundles, should not be in mini cart', () => {
 
     //     // click on the third add to cart 
-    //     cy.get('.css-we5dge').eq(2).click()
+    //     cy.get('.css-pg2o0o').eq(2).click()
 
     //     // bundles pop up should be visible
     //     cy.get('.css-1qmpe37', {timeout: 60000}).should('be.visible')
@@ -64,7 +64,7 @@ describe('bundles on the activity results page', () => {
     it('happy path on bundles', () => {
 
         // click on the third add to cart 
-        cy.get('.css-we5dge').eq(0).click()
+        cy.get('.css-pg2o0o').eq(0).click()
 
         // bundles pop up should be visible
         cy.get('.css-1qmpe37', {timeout: 60000}).should('be.visible')
