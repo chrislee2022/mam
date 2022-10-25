@@ -1,5 +1,14 @@
 class Filters {
 
+
+    //10.24 for mammoth
+
+    mammUpdate() {
+        return cy.get('.css-6noair')
+    }
+
+    // above for mammoth
+
     LodgeName () {
         return cy.get('.filter-header')
     }

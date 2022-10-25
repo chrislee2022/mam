@@ -1,5 +1,17 @@
 class Cart {
 
+    //10.24 for Mammoth, while changing.. 
+
+    mammItems() {
+        return cy.get('.css-q5sllj')
+    }
+
+    mammOrderSummary() {
+        return cy.get('.css-1kr37ck')
+    }
+
+    // above for mammoth
+
     MinicartProductName() {
         return cy.get('.product-name')
     }
@@ -15,7 +27,7 @@ class Cart {
     MiniCart() {
         return cy.get('.mini-cart')
     }
-
+ 
     MiniCartNumber() {
         return cy.get('.mini-cart-toggle-icon-number')
     }    

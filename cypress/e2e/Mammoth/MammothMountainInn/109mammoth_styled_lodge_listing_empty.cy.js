@@ -1,10 +1,7 @@
 /// <reference types="Cypress" />
 
-// import Lodge from "../../PageObjects/Lodge"
-// import Filters from "../../PageObjects/Filters"
-
-import Lodge from "../mammothPageObjects/Lodge"
-import Filters from "../mammothPageObjects/Filters"
+import Lodge from "../../mammothPageObjects/Lodge"
+import Filters from "../../mammothPageObjects/Filters"
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -43,16 +40,16 @@ describe('able to search date with no dates selected', () => {
 
     // Cypress._.times(5, () => {
  
-    it('check number of lodges available', () => {
+    // it('check number of lodges available', () => {
 
-        // cy.get('.fa-xmark.css-zm3qx2').click({ multiple: true })
+    //     // cy.get('.fa-xmark.css-zm3qx2').click({ multiple: true })
 
-        cy.get('.css-iw5yu9')
-        .should('include.text', '9')
-        .should('include.text', 'lodges available')          
+    //     cy.get('.css-iw5yu9')
+    //     .should('include.text', '9')
+    //     .should('include.text', 'lodges available')          
      
          
-    })    
+    // })    
 
     // not the best, the prices already changed in a day....
     it('search date 12/20 to 12/27 with 3 adults 1 kid', () => {
@@ -92,17 +89,17 @@ describe('able to search date with no dates selected', () => {
         cy.get('[data-testid="RemoveIcon"').eq(1).click()
 
         // click on update
-        cy.get('.css-ftwkje').contains('Update').click()
+        filters.mammUpdate().contains('Update').click()
         // cy.contains('Update').click()
 
-        // spinning wheel
-        // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
-        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
-        //     cy.wait(1000)
-        cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
+        // // spinning wheel
+        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
+        // // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
+        // //     cy.wait(1000)
+        // cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
 
-        //text (hardcoded)
-        cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
+        // //text (hardcoded)
+        // cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
 
         // there should be 4 lodges available
         cy.get('.css-iw5yu9')
@@ -152,17 +149,17 @@ describe('able to search date with no dates selected', () => {
         cy.wait(100)
 
         // click on update
-        cy.get('.css-ftwkje').contains('Update').click()
+        filters.mammUpdate().contains('Update').click()
         // cy.contains('Update').click()
 
-        // spinning wheel
-        // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
-        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
-        //     cy.wait(1000)
-        cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
+        // // spinning wheel
+        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
+        // // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
+        // //     cy.wait(1000)
+        // cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
 
-        //text (hardcoded)
-        cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
+        // //text (hardcoded)
+        // cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
 
         // there should be 9 lodges available
         cy.get('.css-iw5yu9', {timeout: 60000})
@@ -223,17 +220,17 @@ describe('able to search date with no dates selected', () => {
         cy.wait(100)
 
         // click on update
-        cy.get('.css-ftwkje').contains('Update').click()
+        filters.mammUpdate().contains('Update').click()
         // cy.contains('Update').click()
 
-        // spinning wheel
-        // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
-        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
-        //     cy.wait(1000)
-        cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
+        // // spinning wheel
+        // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('be.visible')
+        // // // cy.get('.MuiCircularProgress-svg', {timeout: 60000}).should('not.be.visible')
+        // //     cy.wait(1000)
+        // cy.get('.css-13o7eu2', {timeout: 60000}).should('be.visible')
 
-        //text (hardcoded)
-        cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
+        // //text (hardcoded)
+        // cy.get('.css-sy1nt6').contains('Loading...', {timeout: 60000}).should('be.visible')
 
 
         // there should be 4 lodges available
