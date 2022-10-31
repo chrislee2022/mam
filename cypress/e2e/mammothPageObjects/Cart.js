@@ -7,7 +7,7 @@ class Cart {
     }
 
     mammOrderSummary() {
-        return cy.get('.css-1kr37ck')
+        return cy.get('.css-8dcu10')
     }
 
     // above for mammoth

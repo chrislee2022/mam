@@ -14,7 +14,8 @@ const lodge=new Lodge
 
 beforeEach(() => {
     cy.viewport('macbook-13')
-    lodge.MMLodgeListingEmpty()
+    // lodge.MMLodgeListingEmpty()
+    cy.visit('https://uat-content-mammoth-alterra.vercel.app/uat/test/lodging')
     // lodge.uatWPLodgeListing()
     // cy.wait(2500)   
 
@@ -115,8 +116,8 @@ describe('able to search date with no dates selected', () => {
         .should('include.text', '5')
         .should('include.text', 'lodges available')      
 
-        cy.get('.css-6ea11i').eq(0).should('include.text', 'Hillside Highland Townhomes')
-        cy.get('.css-6ea11i').eq(0).should('include.text', '$2,936.29')
+        cy.get('.css-6ea11i').eq(0).should('include.text', 'Hillside Highland')
+        cy.get('.css-6ea11i').eq(0).should('include.text', '$2,850.57')
 
         // // this has changed frequently
         // cy.get('.css-6ea11i').eq(1).should('include.text', 'Juniper Springs Resort')
@@ -175,7 +176,7 @@ describe('able to search date with no dates selected', () => {
             .should('include.text', '9')
             .should('include.text', 'lodges available')      
 
-        cy.get('.css-6ea11i').eq(0).should('include.text', 'Hillside Highland Townhomes')
+        cy.get('.css-6ea11i').eq(0).should('include.text', 'Hillside Highland')
         cy.get('.css-6ea11i').eq(0).should('include.text', '$1,679.20')
 
         // // this has changed frequently 
@@ -188,13 +189,14 @@ describe('able to search date with no dates selected', () => {
         cy.get('.css-6ea11i').eq(3).should('include.text', 'Tamarack Lodge')
         cy.get('.css-6ea11i').eq(3).should('include.text', '$95.20')     
         
-        cy.get('.css-6ea11i').eq(4).should('include.text', 'The Heron at Obsidian Residences')
+        cy.get('.css-6ea11i').eq(4).should('include.text', 'The Heron')
         cy.get('.css-6ea11i').eq(4).should('include.text', '$1,679.20')       
 
-        cy.get('.css-6ea11i').eq(5).should('include.text', 'The Kestral at Obsidian Residences')
+        // is it kestrel or kestral? 
+        cy.get('.css-6ea11i').eq(5).should('include.text', 'The Kestrel ')
         cy.get('.css-6ea11i').eq(5).should('include.text', '$1,919.20')              
 
-        cy.get('.css-6ea11i').eq(6).should('include.text', 'The Lodges at Snowcreek')
+        cy.get('.css-6ea11i').eq(6).should('include.text', 'The Lodges at ')
         cy.get('.css-6ea11i').eq(6).should('include.text', '$799.20')      
         
         // cy.get('.css-6ea11i').eq(7).should('include.text', 'The Village Lodge')
@@ -251,7 +253,7 @@ describe('able to search date with no dates selected', () => {
         cy.get('.css-6ea11i').eq(2).should('include.text', '$167.20')
             .click()   
 
-        cy.url().should('eq', 'https://develop-mammoth-alterra.vercel.app/test/lodging/mammoth-mountain-inn?ArrivalDate=2023-04-10&DepartureDate=2023-04-14&Adult=2&Child=0')
+        cy.url().should('eq', 'https://uat-content-mammoth-alterra.vercel.app/uat/test/lodging/mammoth-mountain-inn?ArrivalDate=2023-04-10&DepartureDate=2023-04-14&Adult=2&Child=0')
 
         //details page not yet styled
 
